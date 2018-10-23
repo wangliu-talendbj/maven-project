@@ -1,11 +1,10 @@
 pipeline {
     agent any
-    }
 
 stages{
         stage('Build'){
             steps {
-                sh /scripts/practice.sh
+                sh '/scripts/practice.sh'
             }
             post {
                 success {
@@ -29,4 +28,5 @@ stages{
             }
         }
     } 
+  }
 }
