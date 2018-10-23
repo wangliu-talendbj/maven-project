@@ -1,8 +1,6 @@
 pipeline {
     agent any
-
     }
-
 
 stages{
         stage('Build'){
@@ -17,6 +15,7 @@ stages{
         }
 
         stage ('Deployments'){
+	    parallel{
                 stage ('Deploy to Staging'){
                     steps {
 			echo 'deploy to staging...'
@@ -26,15 +25,8 @@ stages{
                     steps {
 			echo 'deploy to prod'
                     }
-		    post {
- 			success {
- 		          echo 'awesome'
- 			   }
-			failed {
-			  echo 'awful'	
-			}
-		    }	
                 }
             }
         }
-    }
+    } 
+}
