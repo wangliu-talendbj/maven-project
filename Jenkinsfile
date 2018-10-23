@@ -4,7 +4,7 @@ pipeline {
 	stages{
 		stage('initial'){
 			steps{
-				echo 'I'm starving'
+				echo 'Im starving'
 			}
 		}
 		stage('next'){
