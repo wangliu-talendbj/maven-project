@@ -23,12 +23,17 @@ pipeline {
 		stage('finally'){
 			parallel{
 				stage('p1'){
-					echo 'hello'
+					steps{
+						echo 'hello'
+					}
 				}
 				stage('p2'){
-					echo 'yes'
+					steps{
+						echo 'yes'
+					}
 				}
 			}
 		}
 	}
 }
+
