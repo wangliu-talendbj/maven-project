@@ -4,7 +4,7 @@ pipeline {
 	stages{
 		stage('initial'){
 			steps{
-				echo 'Im starving'
+				echo 'I'm starving'
 			}
 		}
 		stage('next'){
@@ -15,14 +15,19 @@ pipeline {
 				success{
 					echo 'awesome'
 				}
-				failure{
+				failed{
 					echo 'awful'
 				}
 			}
 		}
 		stage('finally'){
-			steps{
-				echo 'well done'
+			parallel{
+				stage('p1'){
+					echo 'hello'
+				}
+				stage('p2'){
+					echo 'yes'
+				}
 			}
 		}
 	}
